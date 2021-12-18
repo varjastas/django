@@ -1,0 +1,35 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="content is-large" style='margin-top: 10px; text-align: center;'>
+        <div class="container is-max-desktop">
+            <h2>Learning Log helps you keep track of your learning, for any topic you're learning about.</h2>
+        </div>
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-2"></div>
+            <div class="tile is-vertical is-3">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification">
+                        <p class="title">Make your own Learning Log,</p>
+                        <div class="content">
+                            <p>and keep a list of the
+                                topics you're learning about. Whenever you learn something new
+                                about a topic, make an entry summarizing what you've learned.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-vertical">
+                    <figure class="image" style='margin-top: 10%;'>
+                        <img class="is-rounded has-ratio" src="{% static 'pic1.jpg'%}">
+                    </figure>
+                </div>
+            </div>
+            <div class="tile is-vertical is-2"></div>
+        </div>
+    </div>
+{% endblock content %}

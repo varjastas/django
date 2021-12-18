@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <meta charset="utf-8">
+    <style>
+        html {
+            background-image: url("{% static 'back4.jpg' %}");
+            width: 100%;
+            height: 100%; 
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+            <figure class="image is-32x32" style='margin-left: 9px; margin-top: 9px;'>
+                <img class="is-rounded has-ratio" src="{% static 'bell-solid.svg'%}">
+            </figure>
+    </div>
+    <div class="navbar-start">
+        <div class="navbar-item">
+            <div class="field is-grouped">
+                <p class="control">
+                    <a role="button" class="button" href="{% url 'learning_logs:index' %}"><span>learning Logs</span></a> 
+                </p>
+                <p class="control">
+                    <a role="button" class="button" href="{% url 'learning_logs:topics' %}"><span>Topics</span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class='navbar-end'>
+        <div class="navbar-item">
+            <div class="field is-grouped">
+                {% if user.is_authenticated %}
+                    <p class="control">
+                        <span class='navbar-item'>Hello, {{ user.username }}</span>
+                    </p>
+                    <p class="control">
+                        <a role="button" class="button" href="{% url 'users:logout' %}"><span>log out</span></a>
+                    </p>
+                {% else %}
+                    <p class="control">
+                        <a role="button" class="button" href="{% url 'users:register' %}"><span>Register</span></a>
+                    </p>
+                    <p class="control">
+                        <a role="button" class="button" href="{% url 'users:login' %}"><span>log in</span></a> 
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>  
+</nav>
+<div style='margin-left: 10px;' style ='margin-top: 20px;'>
+    {% block content %}
+    {% endblock content %}
+</div>
+</body>
+</html>

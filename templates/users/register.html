@@ -1,0 +1,25 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <div class='tile is-vertical'>
+            <article class="tile is-child">
+
+            </article>
+            
+            <article class="tile is-child">
+                <div class="content">
+                    <form method="post" action="{% url 'users:register' %}">
+                        {% csrf_token %}
+                        <ul>
+                            {{ form.as_ul }}
+                        </ul>
+                        <button class='button' name="submit">register</button>
+                        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+                    </form>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>           
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <div class='tile is-vertical'>
+            <article class="tile is-child">
+
+            </article>
+            
+            <article class="tile is-child">
+                <div class="content">
+                    <h1>Add a new topic:</h1>
+                    <form action="{% url 'learning_logs:new_topic' %}" method='post'>
+                        {% csrf_token %}
+                        <ul>
+                            {{ form.as_ul }}
+                        </ul>
+                        <button class="button" name="submit">add topic</button>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock content %}

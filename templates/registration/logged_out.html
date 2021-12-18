@@ -1,0 +1,21 @@
+{% extends "learning_logs/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="content is-large" style='margin-top: 15%'>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-3">
+
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child">
+                    <p class="title">You have been logged out. Thank you for visiting!</p>
+                </article>
+                <article class="tile is-child">
+                    <figure class="image is-128x128" style='text-align: center;'>
+                        <img class="is-rounded has-ratio" src="{% static 'arm3.png'%}">
+                    </figure>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
